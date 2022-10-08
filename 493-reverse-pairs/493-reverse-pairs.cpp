@@ -2,7 +2,6 @@ class Solution {
 public:
     void _merge(vector<int>& nums, int low, int mid, int high, int &reversePairCount) {
     int leftInd = low, rightInd = mid+1, r = rightInd, temp[high-low+1], tempInd = 0, counter = 0;
-    // 4 6 8,  1 2 3
     while(leftInd<=mid) {
         while( r<=high && (nums[leftInd] > (long)2*nums[r]) ) counter++, r++;
         reversePairCount+= counter;
