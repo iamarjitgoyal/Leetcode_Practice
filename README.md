@@ -1,7 +1,5 @@
 ## Table of Contents
-- [The Daily Byte](#the-daily-byte)
 - [Instagram](#instagram)
-- [Articles](#articles)
 - [Online Judges](#online-judges)
 - [Live Coding Practice](#live-coding-practice)
 - [Data Structures](#data-structures)
@@ -12,7 +10,6 @@
 - [Video Lectures](#video-lectures)
 - [Interview Books](#interview-books)
 - [Computer Science News](#computer-science-news)
-- [Directory Tree](#directory-tree)
 
 ## Instagram 
 * [Arjit Goyal](https://www.instagram.com/iamarjitgoyal/)
