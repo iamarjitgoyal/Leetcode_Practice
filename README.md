@@ -92,7 +92,7 @@
    * Insert: `O(log(n))`
    * Remove: `O(log(n))`
 
-<img src="/images/BST.png?raw=true" alt="Binary Search Tree" width="400" height="500">
+<img src="/BST.png?raw=true" alt="Binary Search Tree" width="400" height="500">
 
 ### Trie
 * A trie, sometimes called a radix or prefix tree, is a kind of search tree that is used to store a dynamic set or associative
