@@ -25,7 +25,7 @@ public:
         for (auto vec : flights) {
             graph[vec[0]].emplace_back(make_pair(vec[1], vec[2]));
         }
-        int ans = dfs(graph, src, dst, K);  // or make the dfs call
+        int ans = dfs(graph, src, dst, K);  
         if (ans == INT_MAX)
             return -1;
         return ans;
