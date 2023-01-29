@@ -1,9 +1,8 @@
 class Solution {
-private:
+public:
     vector<int> prefix_sum;
     int total_sum;
 
-public:
     Solution(vector<int>& w) {
         total_sum = 0;
         for (int weight : w) {
