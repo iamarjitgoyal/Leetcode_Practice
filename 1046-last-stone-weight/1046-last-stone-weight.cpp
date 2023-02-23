@@ -6,7 +6,7 @@ public:
             int y = pq.top(); pq.pop();
             int x = pq.top(); pq.pop();
             if (x != y) {
-                pq.push(y - x);
+                pq.emplace(y - x);
             }
         }
         return pq.empty() ? 0 : pq.top();
