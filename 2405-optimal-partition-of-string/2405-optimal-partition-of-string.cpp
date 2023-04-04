@@ -1,25 +1,17 @@
 class Solution {
 public:
-    bool isCharSet(int& charSet, int& idx) {
-        return charSet & (1 << idx);
-    }
-
-    void setChar(int& charSet, int& idx) {
-        charSet |= (1 << idx);
-    }
-
     int partitionString(string s) {
-        int charSet = 0;
-        int i = 0, ans = 1;
+        int curSubstr = 0;
+        int i = 0, ans = 0;
         while(i < s.size()){
             int idx = s[i] - 'a';
-            if(isCharSet(charSet, idx)) {
-                charSet = 0;
+            if(curSubstr & (1 << idx)) {
+                curSubstr = 0;
                 ans++;
             }
-            setChar(charSet, idx);
+            curSubstr |= (1 << idx);
             i++;
         }
-        return ans;
+        return ans + 1;
     }
 };
