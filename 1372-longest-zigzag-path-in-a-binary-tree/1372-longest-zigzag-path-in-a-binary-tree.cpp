@@ -9,8 +9,6 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
-#include <algorithm>
-
 class Solution {
 public:
     int longestZigZag(TreeNode* root) {
