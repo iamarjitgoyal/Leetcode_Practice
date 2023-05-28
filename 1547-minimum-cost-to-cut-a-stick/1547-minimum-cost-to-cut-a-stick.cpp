@@ -1,27 +1,35 @@
 class Solution {
 public:
     int minCost(int n, vector<int>& cuts) {
-        // Add the endpoints of the stick to the cuts array
         cuts.push_back(0);
         cuts.push_back(n);
         
-        // Sort the cuts array
         sort(cuts.begin(), cuts.end());
         
-        int m = cuts.size();
+        int m = cuts.size(); 
+
+        unordered_map<int, unordered_map<int, int>> memo;
         
-        vector<vector<int>> dp(m, vector<int>(m, 0));
-        
-        for (int len = 2; len <= m; len++) {
-            for (int i = 0; i + len < m; i++) {
-                int j = i + len;
-                dp[i][j] = INT_MAX;
-                for (int k = i + 1; k < j; k++) {
-                    dp[i][j] = min(dp[i][j], dp[i][k] + dp[k][j] + cuts[j] - cuts[i]);
-                }
-            }
+        return dp(0, m - 1, cuts, memo);
+    }
+    
+private:
+    int dp(int i, int j, const vector<int>& cuts, unordered_map<int, unordered_map<int, int>>& memo) {
+        if (j - i < 2) {
+            return 0;
         }
         
-        return dp[0][m - 1];
+        if (memo.count(i) && memo[i].count(j)) {
+            return memo[i][j];
+        }
+        
+        int cost = INT_MAX;
+        for (int k = i + 1; k < j; k++) {
+            cost = min(cost, dp(i, k, cuts, memo) + dp(k, j, cuts, memo) + cuts[j] - cuts[i]);
+        }
+        
+        memo[i][j] = cost;
+        
+        return cost;
     }
 };
