@@ -1,18 +1,25 @@
+#include <vector>
+
 class Solution {
 public:
     int minSubArrayLen(int target, vector<int>& nums) {
         int n = nums.size();
-        int left = 0, right = 0, sum = 0, minLen = INT_MAX;
-        // Two pointers approach to find the minimal length subarray
+        int minLength = INT_MAX;
+        int left = 0, right = 0;
+        int sum = 0;
+
         while (right < n) {
             sum += nums[right];
-            right++;
+
             while (sum >= target) {
-                minLen = min(minLen, right - left);
+                minLength = min(minLength, right - left + 1);
                 sum -= nums[left];
                 left++;
             }
+
+            right++;
         }
-        return minLen == INT_MAX ? 0 : minLen;
+
+        return (minLength != INT_MAX) ? minLength : 0;
     }
 };
