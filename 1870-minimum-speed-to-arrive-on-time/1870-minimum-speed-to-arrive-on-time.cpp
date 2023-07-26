@@ -1,6 +1,3 @@
-#include <vector>
-#include <cmath>
-
 class Solution {
 public:
     int minSpeedOnTime(std::vector<int>& dist, double hour) {
