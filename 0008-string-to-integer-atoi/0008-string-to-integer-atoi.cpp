@@ -15,8 +15,8 @@ public:
         while (i < s.length() && isdigit(s[i])) {
             int digit = s[i] - '0';
             
-            if (result > (std::numeric_limits<int>::max() - digit) / 10) {
-                return (sign == 1) ? std::numeric_limits<int>::max() : std::numeric_limits<int>::min();
+            if (result > (numeric_limits<int>::max() - digit) / 10) {
+                return (sign == 1) ? numeric_limits<int>::max() : numeric_limits<int>::min();
             }
             
             result = result * 10 + digit;
