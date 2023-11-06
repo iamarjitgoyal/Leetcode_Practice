@@ -1,5 +1,5 @@
 class SeatManager {
-private:
+
     priority_queue<int, vector<int>, greater<int>> available_seats;
 
 public:
